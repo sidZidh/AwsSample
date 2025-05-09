@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 8.0
+  build:
+    commands:
+      - cd sip-calculator-auth
+      - dotnet publish -c Release -o ./publish
+artifacts:
+  files:
+    - "**/*"
+  base-directory: sip-calculator-auth/publish
