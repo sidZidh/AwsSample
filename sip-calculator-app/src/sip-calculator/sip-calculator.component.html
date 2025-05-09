@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>SIP Calculator 🧮</h1>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Monthly Investment (₹)</mat-label>
+    <input matInput type="number" [(ngModel)]="monthlyInvestment" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Expected Return Rate (%)</mat-label>
+    <input matInput type="number" [(ngModel)]="annualReturnRate" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Investment Period (Years)</mat-label>
+    <input matInput type="number" [(ngModel)]="investmentPeriod" />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="calculateSip()">
+    Calculate
+  </button>
+
+  <div class="results" *ngIf="investedAmount">
+    <h2>Results 📊</h2>
+    <p><strong>Invested Amount:</strong> ₹{{ investedAmount | number }}</p>
+    <p><strong>Estimated Returns:</strong> ₹{{ estimatedReturns | number }}</p>
+    <p><strong>Total Value:</strong> ₹{{ totalValue | number }}</p>
+  </div>
+</div>
